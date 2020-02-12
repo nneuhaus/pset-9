@@ -26,15 +26,37 @@ const winningConditions = [
   [41,34,27,20]//up
   [34,27,20,13]//up
   [27,20,13,6]//up
-  [35,29,23,17]//diagonal
-  [28,22,16,10]//diagonal
+  [35,29,23,17]//diagonala
+  [36,30,24,18]//diagonala
+  [37,31,25,19]//diagonala
+  [38,32,26,20]//diagonala
+  [28,22,16,10]//diagonalb
+  [29,23,17,11]//diagonalb
+  [30,24,18,12]//diagonalb
+  [31,25,19,13]//diagonalb
+  [21,15,9,3] //diagonalc
+  [22,16,10,4] //diagonalc
+  [23,17,11,5] //diagonalc
+  [24,18,12,6] //diagonalc
+  [41,33,25,17]//diagonald
+  [40,32,24,16]//diagonald
+  [39,31,23,15]//diagonald
+  [38,30,22,14]//diagonald
+  [34,26,18,10] //diagonale
+  [33,25,17,9]//diagonale
+  [32,24,16,8]//diagonale
+  [31,23,15,7]//diagonale
+  [27,19,11,3]//diagonalf
+  [26,18,10,2]//diagonalf
+  [25,17,9,1]//diagonalf
+  [24,16,8,0]//diagonalf
 ];
 ///////////////////// APP STATE (VARIABLES) /////////////////////////
 let board;
 let turn;
 let win;
-let xwon = 0;
-let owon = 0;
+let rwon = 0;
+let ywon = 0;
 let tieScore = 0;
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
 const squares = Array.from(document.querySelectorAll("#board div"))
