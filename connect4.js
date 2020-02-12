@@ -50,7 +50,7 @@ const winningConditions = [
   [26,18,10,2]//diagonalf
   [25,17,9,1]//diagonalf
   [24,16,8,0]//diagonalf
-  []
+
 ];
 ///////////////////// APP STATE (VARIABLES) /////////////////////////
 let board;
