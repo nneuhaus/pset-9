@@ -50,6 +50,7 @@ const winningConditions = [
   [26,18,10,2]//diagonalf
   [25,17,9,1]//diagonalf
   [24,16,8,0]//diagonalf
+  []
 ];
 ///////////////////// APP STATE (VARIABLES) /////////////////////////
 let board;
@@ -59,7 +60,6 @@ let rwon = 0;
 let ywon = 0;
 let tieScore = 0;
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
-const squares = Array.from(document.querySelectorAll("#board div"))
 const message = document.querySelector("h2");
 ///////////////////// EVENT LISTENERS ///////////////////////////////
 window.onload = init;
@@ -69,7 +69,7 @@ document.getElementById("board").onclick = takeTurn;
 document.getElementById("reset-button").onclick = init;
 document.getElementById("firstX").onclick = init2;
 document.getElementById("firstO").onclick = init3;
-///////////////////// FUNCTIONS /////////////////////////////////////
+///////////////////// FUNCTIONS //////////////////////////////////////
 function init() {
   board = [
     "", "", "", "", "","", ""
@@ -165,7 +165,8 @@ function getWinner() {
     if (
       board[condition[0]] &&
       board[condition[0]] === board[condition[1]] &&
-      board[condition[1]] === board[condition[2]]
+      board[condition[1]] === board[condition[2]] &&
+
     ) {
       winner = board[condition[0]];
       if (winner === "Red") {
