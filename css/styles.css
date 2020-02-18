@@ -1,6 +1,6 @@
 body {
   text-align: center;
-  font-family: "Roboto", monospace;
+  font-family: "Spade", monospace;
   background-color: #dbf3fa;
   color: #522d80;
 }
@@ -16,7 +16,7 @@ h1 {
 
 h2 {
   color: #6593f5;
-  font-family: "Roboto", monospace;
+  font-family: "Spade", monospace;
   font-weight: lighter;
   font-size: 48px;
   margin: 2%;
@@ -30,14 +30,14 @@ h3 {
 }
 h4 {
   color: #9172ec;
-  font-family: "Roboto", monospace;
+  font-family: "Major Mono Display", monospace;
   font-size: 28px;
   font-weight: lighter;
 }
 ul {
   color: #522d80;
   font-size: 24px;
-  font-family: "Roboto", monospace;
+  font-family: "Major Mono Display", monospace;
 }
 
 .container {
