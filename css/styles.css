@@ -24,20 +24,20 @@ h2 {
 
 h3 {
   color: #f25278;
-  font-family: "Roboto", monospace;
+  font-family: "Spade", monospace;
   font-size: 36px;
   font-weight: lighter;
 }
 h4 {
   color: #9172ec;
-  font-family: "Major Mono Display", monospace;
+  font-family: "Spade", monospace;
   font-size: 28px;
   font-weight: lighter;
 }
 ul {
   color: #522d80;
   font-size: 24px;
-  font-family: "Major Mono Display", monospace;
+  font-family: "Spade", monospace;
 }
 
 .container {
