@@ -1,23 +1,44 @@
 body {
   text-align: center;
   font-family: "Roboto", monospace;
-  color: #6a0dad;
+  background-color: #dbf3fa;
+  color: #522d80;
 }
 
 h1 {
+  color: #522d80;
   margin: 0 auto;
   font-family: "Major Mono Display", monospace;
-  font-size: 48px;
+  font-size: 64px;
   margin: 2%;
 }
 
 
 h2 {
-  font-size: 36px;
+  color: #6593f5;
+  font-family: "Roboto", monospace;
   font-weight: lighter;
+  font-size: 48px;
   margin: 2%;
 }
 
+h3 {
+  color: #f25278;
+  font-family: "Roboto", monospace;
+  font-size: 36px;
+  font-weight: lighter;
+}
+h4 {
+  color: #9172ec;
+  font-family: "Roboto", monospace;
+  font-size: 28px;
+  font-weight: lighter;
+}
+ul {
+  color: #522d80;
+  font-size: 24px;
+  font-family: "Roboto", monospace;
+}
 
 .container {
   display: flex;
