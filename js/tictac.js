@@ -1,22 +1,45 @@
 ///////////////////// CONSTANTS /////////////////////////////////////
 const winningConditions = [
-  [0, 1, 2],
-  [3, 4, 5],
-  [6, 7, 8],
-  [0, 3, 6],
-  [1, 4, 7],
-  [2, 5, 8],
-  [0, 4, 8],
-  [2, 4, 6]
+  [0, 10, 20],
+  [30, 40, 50],
+  [60, 70, 80],
+  [0, 30, 60],
+  [10, 40, 70],
+  [20, 50, 80],
+  [0, 40, 80],
+  [20, 40, 60]
 ];
+
+const sqaureWin = [
+  //box1
+  [1,2,3]
+  [4,5,6]
+  [7,8,9]
+  [3,5,7]
+  [2,5,8]
+  [3,6,9]
+  [1,5,9]
+  [1,4,7]
+
+  //box2
+  //box3
+  //box4
+  //box5
+  //box6
+  //box7
+  //box8
+  //box8
+  //box9
+]
 ///////////////////// APP STATE (VARIABLES) /////////////////////////
 
 let board;
 let turn;
-let win;
+let sqaureWin;
+let fullWin
 let xwon = 0;
 let owon = 0;
-let tieScore = 0; 
+let tieScore = 0;
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
 const squares = Array.from(document.querySelectorAll("#board div"))
 const message = document.querySelector("h2");
