@@ -33,6 +33,7 @@ h4 {
   font-family: "Spade", monospace;
   font-size: 28px;
   font-weight: lighter;
+  column-count: 3;
 }
 ul {
   color: #522d80;

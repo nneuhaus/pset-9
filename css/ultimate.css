@@ -148,11 +148,11 @@ ul {
 .area:nth-child(3n+2) {
     border-right: 3px solid #444;
 }
-
+/*
 .area:nth-child(n+4) {
     border-top: 3px solid #444;
 }
-
+*/
 .area:after {
     content: "";
     display: table;
@@ -166,8 +166,6 @@ ul {
     height: 33.333%;
     padding: 1%;
 }
-
-
 
 .tile-button {
     width: 100%;
