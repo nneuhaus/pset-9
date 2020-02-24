@@ -12,7 +12,7 @@ const winningConditionsTotal = [
   [20, 40, 60]
 ];
 
-const squareWinningConditions = [
+const smallWinningConditions = [
 
   //1
   [1, 2, 3],
@@ -103,9 +103,16 @@ const squareWinningConditions = [
 
 let board;
 let turn;
-let totalWin;
-let sqaureWin;
-
+let totalWin = false;;
+let sqaureWin1 = false;
+let smallWin2 = false;
+let smallWin3 = false;
+let smallWin4 = false;
+let smallWin5 = false;
+let smallWin6 = false;
+let smallWin7 = false;
+let smallWin8 = false;
+let smallWin9 = false;
 ///////////////////// CACHED ELEMENT REFERENCES /////////////////////
 const squares = Array.from(document.querySelectorAll("#board div"));
 const message = document.querySelector("h2");
@@ -119,3 +126,601 @@ document.getElementById("reset-button").onclick = init;
 
 
 //////////////////// FUNCTIONS /////////////////////////////////////
+function init() {
+
+  board = [
+
+  ];
+
+  turn = "X";
+  render();
+}
+
+function render() {
+  board.forEach(function(mark, index) {
+    squares[index].textContent = mark;
+  });
+  message.textContent = win ? `${overallWin} wins!` : `Turn: ${turn}`;
+}
+
+function takeTurn(e) {
+  if (!overallWin) {
+    let index = squares.findIndex(function(square) {
+      return square === e.target;
+    });
+
+    if (squares[index].textContent !== "X" && squares[index].textContent !== "O") {
+      board[index] = turn;
+
+      if(smallWin1 === "X" || smallWin1 === "O") {
+
+      } else {
+
+        smallWin1 = getsmallWinner1(e);
+      }
+
+      if(smallWin2 === "X" || smallWin2 === "O") {
+
+        //don't run this function again
+
+      } else {
+
+        smallWin2 = getsmallWinner2(e);
+
+      }
+
+
+
+      if(smallWin3 === "X" || smallWin3 === "O") {
+
+        //don't run this function again
+
+      } else {
+
+        smallWin3 = getsmallWinner3(e);
+
+      }
+
+
+
+      if(smallWin4 === "X" || smallWin4 === "O") {
+
+        //don't run this function again
+
+      } else {
+
+        smallWin4 = getsmallWinner4(e);
+
+      }
+
+
+
+      if(smallWin5 === "X" || smallWin5 === "O") {
+
+        //don't run this function again
+
+      } else {
+
+        smallWin5 = getsmallWinner5(e);
+
+      }
+
+
+
+      if(smallWin6 === "X" || smallWin6 === "O") {
+
+        //don't run this function again
+
+      } else {
+
+        smallWin6 = getsmallWinner6(e);
+
+      }
+
+
+
+      if(smallWin7 === "X" || smallWin7 === "O") {
+
+        //don't run this function again
+
+      } else {
+
+        smallWin7 = getsmallWinner7(e);
+
+      }
+
+
+
+      if(smallWin8 === "X" || smallWin8 === "O") {
+
+        //don't run this function again
+
+      } else {
+
+        smallWin8 = getsmallWinner8(e);
+
+      }
+
+
+
+      if(smallWin9 === "X" || smallWin9 === "O") {
+
+        //don't run this function again
+
+      } else {
+
+        smallWin9 = getsmallWinner9(e);
+
+      }
+
+
+
+
+
+      overallWin = getOverallWinner();
+
+
+
+      turn = turn === "X" ? "O" : "X";
+
+    }
+
+/*
+
+    if(squareWin1 === true) {
+
+      let bigIndex = Math.floor((index/10));
+
+      if (bigIndex !== 0) {
+
+        bigIndex = bigIndex * 10;
+
+      }
+
+      turn = turn === "X" ? "O" : "X";
+
+      squares[bigIndex].textContent = turn;
+
+
+
+    }
+
+    if(squareWin2 === true) {
+
+      let bigIndex = Math.floor((index/10));
+
+      if (bigIndex !== 0) {
+
+        bigIndex = bigIndex * 10;
+
+      }
+
+      turn = turn === "X" ? "O" : "X";
+
+      squares[bigIndex].textContent = turn;
+
+
+
+    }
+
+*/
+
+    render();
+
+  }
+
+}
+
+
+
+function getsmallWinner1(e){
+
+  let winner = false;
+
+
+
+  miniWinningConditions1.forEach(function(condition, index) {
+
+    if (
+
+      board[condition[0]] &&
+
+      board[condition[0]] === board[condition[1]] &&
+
+      board[condition[1]] === board[condition[2]]
+
+    ) {
+
+
+
+    winner = board[condition[0]];
+
+    smallWin1 = true;
+
+    console.log("small WINNER 1");
+
+  }
+
+  });
+
+
+
+  return winner;
+
+}
+
+
+
+function getsmallWinner2(e){
+
+  let winner = false;
+
+
+
+  miniWinningConditions2.forEach(function(condition, index) {
+
+    if (
+
+      board[condition[0]] &&
+
+      board[condition[0]] === board[condition[1]] &&
+
+      board[condition[1]] === board[condition[2]]
+
+    ) {
+
+
+
+    winner = board[condition[0]];
+
+    smallWin2 = true;
+
+    console.log("small WINNER 2");
+
+    }
+
+  });
+
+
+
+  return winner;
+
+}
+
+
+
+function getsmallWinner3(e){
+
+  let winner = false;
+
+
+
+  miniWinningConditions3.forEach(function(condition, index) {
+
+    if (
+
+      board[condition[0]] &&
+
+      board[condition[0]] === board[condition[1]] &&
+
+      board[condition[1]] === board[condition[2]]
+
+    ) {
+
+
+
+    winner = board[condition[0]];
+
+    smallWin3 = true;
+
+    console.log("small WINNER 3");
+
+    }
+
+  });
+
+
+
+  return winner;
+
+}
+
+
+
+function getsmallWinner4(e){
+
+  let winner = false;
+
+
+
+  miniWinningConditions4.forEach(function(condition, index) {
+
+    if (
+
+      board[condition[0]] &&
+
+      board[condition[0]] === board[condition[1]] &&
+
+      board[condition[1]] === board[condition[2]]
+
+    ) {
+
+
+
+    winner = board[condition[0]];
+
+    smallWin4 = true;
+
+    console.log("small WINNER 4");
+
+    }
+
+  });
+
+
+
+  return winner;
+
+}
+
+
+
+function getsmallWinner5(e){
+
+  let winner = false;
+
+
+
+  miniWinningConditions5.forEach(function(condition, index) {
+
+    if (
+
+      board[condition[0]] &&
+
+      board[condition[0]] === board[condition[1]] &&
+
+      board[condition[1]] === board[condition[2]]
+
+    ) {
+
+
+
+    winner = board[condition[0]];
+
+    smallWin5 = true;
+
+    console.log("small WINNER 5");
+
+    }
+
+  });
+
+
+
+  return winner;
+
+}
+
+
+
+function getsmallWinner6(e){
+
+  let winner = false;
+
+
+
+  miniWinningConditions6.forEach(function(condition, index) {
+
+    if (
+
+      board[condition[0]] &&
+
+      board[condition[0]] === board[condition[1]] &&
+
+      board[condition[1]] === board[condition[2]]
+
+    ) {
+
+
+
+    winner = board[condition[0]];
+
+    smallWin6 = true;
+
+    console.log("small WINNER 6");
+
+    }
+
+  });
+
+
+
+  return winner;
+
+}
+
+
+
+function getsmallWinner7(e){
+
+  let winner = false;
+
+
+
+  miniWinningConditions7.forEach(function(condition, index) {
+
+    if (
+
+      board[condition[0]] &&
+
+      board[condition[0]] === board[condition[1]] &&
+
+      board[condition[1]] === board[condition[2]]
+
+    ) {
+
+
+
+    winner = board[condition[0]];
+
+    smallWin7 = true;
+
+    console.log("small WINNER 7");
+
+    }
+
+  });
+
+
+
+  return winner;
+
+}
+
+
+
+function getsmallWinner8(e){
+
+  let winner = false;
+
+
+
+  miniWinningConditions8.forEach(function(condition, index) {
+
+    if (
+
+      board[condition[0]] &&
+
+      board[condition[0]] === board[condition[1]] &&
+
+      board[condition[1]] === board[condition[2]]
+
+    ) {
+
+
+
+    winner = board[condition[0]];
+
+    smallWin8 = true;
+
+    console.log("small WINNER 8");
+
+    }
+
+  });
+
+
+
+  return winner;
+
+}
+
+
+
+function getsmallWinner9(e){
+
+  let winner = false;
+
+
+
+  miniWinningConditions9.forEach(function(condition, index) {
+
+    if (
+
+      board[condition[0]] &&
+
+      board[condition[0]] === board[condition[1]] &&
+
+      board[condition[1]] === board[condition[2]]
+
+    ) {
+
+
+
+    winner = board[condition[0]];
+
+    smallWin9 = true;
+
+    console.log("small WINNER 9");
+
+    }
+
+  });
+
+
+
+  return winner;
+
+}
+
+
+
+function getOverallWinner(){
+
+  let winner = false;
+
+
+
+  if (
+
+    (smallWin1 === "X" && smallWin2 === "X" && smallWin3 === "X") ||
+
+    (smallWin4 === "X" && smallWin5 === "X" && smallWin6 === "X") ||
+
+    (smallWin7 === "X" && smallWin8 === "X" && smallWin9 === "X") ||
+
+    (smallWin1 === "X" && smallWin4 === "X" && smallWin7 === "X") ||
+
+    (smallWin2 === "X" && smallWin5 === "X" && smallWin8 === "X") ||
+
+    (smallWin5 === "X" && smallWin6 === "X" && smallWin9 === "X") ||
+
+    (smallWin1 === "X" && smallWin5 === "X" && smallWin9 === "X") ||
+
+    (smallWin3 === "X" && smallWin5 === "X" && smallWin7 === "X")
+
+  ) {
+
+    console.log("X is the ultimate winner!");
+
+    overallWin = "X";
+
+    win = true;
+
+  } else if (
+
+    (smallWin1 === "O" && smallWin2 === "O" && smallWin3 === "O") ||
+
+    (smallWin4 === "O" && smallWin5 === "O" && smallWin6 === "O") ||
+
+    (smallWin7 === "O" && smallWin8 === "O" && smallWin9 === "O") ||
+
+    (smallWin1 === "O" && smallWin4 === "O" && smallWin7 === "O") ||
+
+    (smallWin2 === "O" && smallWin5 === "O" && smallWin8 === "O") ||
+
+    (smallWin5 === "O" && smallWin6 === "O" && smallWin9 === "O") ||
+
+    (smallWin1 === "O" && smallWin5 === "O" && smallWin9 === "O") ||
+
+    (smallWin3 === "O" && smallWin5 === "O" && smallWin7 === "O")
+
+  ) {
+
+    console.log("O is the OVERALL WINNER");
+
+    overallWin = "O";
+
+    win = true;
+
+  } else {
+
+    //null
+
+  }
+
+
+
+  //return winner ? winner : board.includes("") ? null : "T";
+
+}
