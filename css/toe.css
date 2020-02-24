@@ -35,9 +35,23 @@ h4 {
   font-weight: lighter;
   column-count: 3;
 }
+h5 {
+  color: #9172ec;
+  font-family: "Spade", monospace;
+  font-size: 18px;
+  line-height: 1em;
+}
+h6 {
+  color: #9172ec;
+  font-family: "Spade", monospace;
+  font-size: 18px;
+  line-height: 1em;
+  width: 48px;
+  height: 48px;
+}
 ul {
   color: #522d80;
-  font-size: 24px;
+  font-size: 18px;
   font-family: "Spade", monospace;
 }
 
