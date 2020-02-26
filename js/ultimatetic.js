@@ -1188,6 +1188,30 @@ function getOverallWinner(){
 
   } else {
 
+/*
+
+    ((localWin1 === "O" || localWin1 === "X") &&
+
+    (localWin2 === "O" && localWin3 === "O") ||
+
+    (localWin4 === "O" && localWin5 === "O" && localWin6 === "O") ||
+
+    (localWin7 === "O" && localWin8 === "O" && localWin9 === "O") ||
+
+    (localWin1 === "O" && localWin4 === "O" && localWin7 === "O") ||
+
+    (localWin2 === "O" && localWin5 === "O" && localWin8 === "O") ||
+
+    (localWin5 === "O" && localWin6 === "O" && localWin9 === "O") ||
+
+    (localWin1 === "O" && localWin5 === "O" && localWin9 === "O") ||
+
+    (localWin3 === "O" && localWin5 === "O" && localWin7 === "O")
+
+    overallWin = "T";
+
+  */
+
   }
 
 
