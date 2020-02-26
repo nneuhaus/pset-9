@@ -13,8 +13,6 @@ const miniWinningConditions1 = [
   [3, 5, 7]
 ]
 
-
-
 const miniWinningConditions2 = [
 
   [11, 12, 13],
@@ -26,8 +24,6 @@ const miniWinningConditions2 = [
   [11, 15, 19],
   [13, 15, 17]
 ]
-
-
 
 const miniWinningConditions3 = [
 
@@ -234,48 +230,26 @@ function init() {
     squares[x].textContent === ""
 
   }
-
-
-
   board = [
 
   ];
 
-
-
   turn = "X";
-
   render();
-
 }
-
-
 
 function render() {
-
   board.forEach(function(mark, index) {
-
     squares[index].textContent = mark;
-
   });
 
-
-
   if (draw === true) {
-
     message.textContent = "It's a tie!";
-
   } else {
-
     message.textContent = win ? `${overallWin} wins!` : `Turn: ${turn}`;
-
   }
 
-
-
 }
-
-
 
 function takeTurn(e) {
 
