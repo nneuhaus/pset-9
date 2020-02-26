@@ -225,10 +225,17 @@ document.getElementById("reset-button").onclick = init;
 
 
 ///////////////////// FUNCTIONS /////////////////////////////////////
-
-
-
 function init() {
+
+  console.log("reset");
+
+  for (x = 0; x < 90; x++) {
+
+    squares[x].textContent === ""
+
+  }
+
+
 
   board = [
 
@@ -254,11 +261,17 @@ function render() {
 
 
 
-  message.textContent = win ? `${overallWin} wins!` : `Turn: ${turn}`;
+  if (draw === true) {
+
+    message.textContent = "It's a tie!";
+
+  } else {
+
+    message.textContent = win ? `${overallWin} wins!` : `Turn: ${turn}`;
+
+  }
 
 
-
-  //returns "undefined wins"
 
 }
 
@@ -282,9 +295,7 @@ function takeTurn(e) {
 
 
 
-      if(localWin1 === "X" || localWin1 === "O") {
-
-        //don't run this function again
+      if(localWin1 === "X" || localWin1 === "O" || localWin1 === "T") {
 
       } else {
 
@@ -294,9 +305,7 @@ function takeTurn(e) {
 
 
 
-      if(localWin2 === "X" || localWin2 === "O") {
-
-        //don't run this function again
+      if(localWin2 === "X" || localWin2 === "O" || localWin2 === "T") {
 
       } else {
 
@@ -306,9 +315,7 @@ function takeTurn(e) {
 
 
 
-      if(localWin3 === "X" || localWin3 === "O") {
-
-        //don't run this function again
+      if(localWin3 === "X" || localWin3 === "O" || localWin3 === "T") {
 
       } else {
 
@@ -318,9 +325,7 @@ function takeTurn(e) {
 
 
 
-      if(localWin4 === "X" || localWin4 === "O") {
-
-        //don't run this function again
+      if(localWin4 === "X" || localWin4 === "O" || localWin4 === "T") {
 
       } else {
 
@@ -330,9 +335,7 @@ function takeTurn(e) {
 
 
 
-      if(localWin5 === "X" || localWin5 === "O") {
-
-        //don't run this function again
+      if(localWin5 === "X" || localWin5 === "O" || localWin5 === "T") {
 
       } else {
 
@@ -342,9 +345,7 @@ function takeTurn(e) {
 
 
 
-      if(localWin6 === "X" || localWin6 === "O") {
-
-        //don't run this function again
+      if(localWin6 === "X" || localWin6 === "O" || localWin6 === "T") {
 
       } else {
 
@@ -354,9 +355,7 @@ function takeTurn(e) {
 
 
 
-      if(localWin7 === "X" || localWin7 === "O") {
-
-        //don't run this function again
+      if(localWin7 === "X" || localWin7 === "O" || localWin7 === "T") {
 
       } else {
 
@@ -366,9 +365,7 @@ function takeTurn(e) {
 
 
 
-      if(localWin8 === "X" || localWin8 === "O") {
-
-        //don't run this function again
+      if(localWin8 === "X" || localWin8 === "O" || localWin8 === "T") {
 
       } else {
 
@@ -378,9 +375,7 @@ function takeTurn(e) {
 
 
 
-      if(localWin9 === "X" || localWin9 === "O") {
-
-        //don't run this function again
+      if(localWin9 === "X" || localWin9 === "O" || localWin9 === "T") {
 
       } else {
 
@@ -390,9 +385,11 @@ function takeTurn(e) {
 
 
 
-
+      render();
 
       overallWin = getOverallWinner();
+
+      tieCheck = checkTie();
 
 
 
@@ -472,6 +469,8 @@ function getLocalWinner1(e){
 
     localWin1 = true;
 
+    localWinner1 = winner;
+
     console.log("LOCAL WINNER 1");
 
   }
@@ -480,7 +479,35 @@ function getLocalWinner1(e){
 
 
 
-  return winner;
+  if (
+
+    ((board[1] === "X" || board[1] === "O") &&
+
+    (board[2] === "X" || board[2] === "O") &&
+
+    (board[3] === "X" || board[3] === "O") &&
+
+    (board[4] === "X" || board[4] === "O") &&
+
+    (board[5] === "X" || board[5] === "O") &&
+
+    (board[6] === "X" || board[6] === "O") &&
+
+    (board[7] === "X" || board[7] === "O") &&
+
+    (board[8] === "X" || board[8] === "O") &&
+
+    (board[9] === "X" || board[9] === "O")) && !localWin1
+
+  ) {
+
+    console.log("LOCAL BOARD 1 is TIE");
+
+    localWinner1 = "T";
+
+  }
+
+  return localWinner1;
 
 }
 
@@ -510,6 +537,8 @@ function getLocalWinner2(e){
 
     localWin2 = true;
 
+    localWinner2 = winner;
+
     console.log("LOCAL WINNER 2");
 
     }
@@ -518,7 +547,37 @@ function getLocalWinner2(e){
 
 
 
-  return winner;
+    if (
+
+      ((board[11] === "X" || board[11] === "O") &&
+
+      (board[12] === "X" || board[12] === "O") &&
+
+      (board[13] === "X" || board[13] === "O") &&
+
+      (board[14] === "X" || board[14] === "O") &&
+
+      (board[15] === "X" || board[15] === "O") &&
+
+      (board[16] === "X" || board[16] === "O") &&
+
+      (board[17] === "X" || board[17] === "O") &&
+
+      (board[18] === "X" || board[18] === "O") &&
+
+      (board[19] === "X" || board[19] === "O")) && !localWin2
+
+    ) {
+
+      console.log("LOCAL BOARD 2 is TIE");
+
+      localWinner2 = "T";
+
+    }
+
+
+
+  return localWinner2;
 
 }
 
@@ -548,6 +607,8 @@ function getLocalWinner3(e){
 
     localWin3 = true;
 
+    localWinner3 = winner;
+
     console.log("LOCAL WINNER 3");
 
     }
@@ -556,7 +617,35 @@ function getLocalWinner3(e){
 
 
 
-  return winner;
+    if (
+
+      ((board[21] === "X" || board[21] === "O") &&
+
+      (board[22] === "X" || board[22] === "O") &&
+
+      (board[23] === "X" || board[23] === "O") &&
+
+      (board[24] === "X" || board[24] === "O") &&
+
+      (board[25] === "X" || board[25] === "O") &&
+
+      (board[26] === "X" || board[26] === "O") &&
+
+      (board[27] === "X" || board[27] === "O") &&
+
+      (board[28] === "X" || board[28] === "O") &&
+
+      (board[29] === "X" || board[29] === "O")) && !localWin3
+
+    ) {
+
+      console.log("LOCAL BOARD 3 is TIE");
+
+      localWinner3 = "T";
+
+    }
+
+    return localWinner3;
 
 }
 
@@ -586,6 +675,8 @@ function getLocalWinner4(e){
 
     localWin4 = true;
 
+    localWinner4 = winner;
+
     console.log("LOCAL WINNER 4");
 
     }
@@ -594,7 +685,35 @@ function getLocalWinner4(e){
 
 
 
-  return winner;
+    if (
+
+      ((board[31] === "X" || board[31] === "O") &&
+
+      (board[32] === "X" || board[32] === "O") &&
+
+      (board[33] === "X" || board[33] === "O") &&
+
+      (board[34] === "X" || board[34] === "O") &&
+
+      (board[35] === "X" || board[35] === "O") &&
+
+      (board[36] === "X" || board[36] === "O") &&
+
+      (board[37] === "X" || board[37] === "O") &&
+
+      (board[38] === "X" || board[38] === "O") &&
+
+      (board[39] === "X" || board[39] === "O")) && !localWin4
+
+    ) {
+
+      console.log("LOCAL BOARD 4 is TIE");
+
+      localWinner4 = "T";
+
+    }
+
+    return localWinner4;
 
 }
 
@@ -624,6 +743,8 @@ function getLocalWinner5(e){
 
     localWin5 = true;
 
+    localWinner5 = winner;
+
     console.log("LOCAL WINNER 5");
 
     }
@@ -632,7 +753,35 @@ function getLocalWinner5(e){
 
 
 
-  return winner;
+  if (
+
+    ((board[41] === "X" || board[41] === "O") &&
+
+    (board[42] === "X" || board[42] === "O") &&
+
+    (board[43] === "X" || board[43] === "O") &&
+
+    (board[44] === "X" || board[44] === "O") &&
+
+    (board[45] === "X" || board[45] === "O") &&
+
+    (board[46] === "X" || board[46] === "O") &&
+
+    (board[47] === "X" || board[47] === "O") &&
+
+    (board[48] === "X" || board[48] === "O") &&
+
+    (board[49] === "X" || board[49] === "O")) && !localWin5
+
+  ) {
+
+    console.log("LOCAL BOARD 5 is TIE");
+
+    localWinner5 = "T";
+
+  }
+
+  return localWinner5;
 
 }
 
@@ -662,6 +811,8 @@ function getLocalWinner6(e){
 
     localWin6 = true;
 
+    localWinner6 = winner;
+
     console.log("LOCAL WINNER 6");
 
     }
@@ -670,7 +821,35 @@ function getLocalWinner6(e){
 
 
 
-  return winner;
+  if (
+
+    ((board[51] === "X" || board[51] === "O") &&
+
+    (board[52] === "X" || board[52] === "O") &&
+
+    (board[53] === "X" || board[53] === "O") &&
+
+    (board[54] === "X" || board[54] === "O") &&
+
+    (board[55] === "X" || board[55] === "O") &&
+
+    (board[56] === "X" || board[56] === "O") &&
+
+    (board[57] === "X" || board[57] === "O") &&
+
+    (board[58] === "X" || board[58] === "O") &&
+
+    (board[59] === "X" || board[59] === "O")) && !localWin6
+
+  ) {
+
+    console.log("LOCAL BOARD 6 is TIE");
+
+    localWinner6 = "T";
+
+  }
+
+  return localWinner6;
 
 }
 
@@ -700,6 +879,8 @@ function getLocalWinner7(e){
 
     localWin7 = true;
 
+    localWinner7 = winner;
+
     console.log("LOCAL WINNER 7");
 
     }
@@ -708,7 +889,35 @@ function getLocalWinner7(e){
 
 
 
-  return winner;
+  if (
+
+    ((board[61] === "X" || board[61] === "O") &&
+
+    (board[62] === "X" || board[62] === "O") &&
+
+    (board[63] === "X" || board[63] === "O") &&
+
+    (board[64] === "X" || board[64] === "O") &&
+
+    (board[65] === "X" || board[65] === "O") &&
+
+    (board[66] === "X" || board[66] === "O") &&
+
+    (board[67] === "X" || board[67] === "O") &&
+
+    (board[68] === "X" || board[68] === "O") &&
+
+    (board[69] === "X" || board[69] === "O")) && !localWin7
+
+  ) {
+
+    console.log("LOCAL BOARD 7 is TIE");
+
+    localWinner7 = "T";
+
+  }
+
+  return localWinner7;
 
 }
 
@@ -738,6 +947,8 @@ function getLocalWinner8(e){
 
     localWin8 = true;
 
+    localWinner8 = winner;
+
     console.log("LOCAL WINNER 8");
 
     }
@@ -746,7 +957,35 @@ function getLocalWinner8(e){
 
 
 
-  return winner;
+  if (
+
+    ((board[71] === "X" || board[71] === "O") &&
+
+    (board[72] === "X" || board[72] === "O") &&
+
+    (board[73] === "X" || board[73] === "O") &&
+
+    (board[74] === "X" || board[74] === "O") &&
+
+    (board[75] === "X" || board[75] === "O") &&
+
+    (board[76] === "X" || board[76] === "O") &&
+
+    (board[77] === "X" || board[77] === "O") &&
+
+    (board[78] === "X" || board[78] === "O") &&
+
+    (board[79] === "X" || board[79] === "O")) && !localWin8
+
+  ) {
+
+    console.log("LOCAL BOARD 8 is TIE");
+
+    localWinner8 = "T";
+
+  }
+
+  return localWinner8;
 
 }
 
@@ -776,6 +1015,8 @@ function getLocalWinner9(e){
 
     localWin9 = true;
 
+    localWinner9 = winner;
+
     console.log("LOCAL WINNER 9");
 
     }
@@ -784,7 +1025,35 @@ function getLocalWinner9(e){
 
 
 
-  return winner;
+  if (
+
+    ((board[81] === "X" || board[81] === "O") &&
+
+    (board[82] === "X" || board[82] === "O") &&
+
+    (board[83] === "X" || board[83] === "O") &&
+
+    (board[84] === "X" || board[84] === "O") &&
+
+    (board[85] === "X" || board[85] === "O") &&
+
+    (board[86] === "X" || board[86] === "O") &&
+
+    (board[87] === "X" || board[87] === "O") &&
+
+    (board[88] === "X" || board[88] === "O") &&
+
+    (board[89] === "X" || board[89] === "O")) && !localWin9
+
+  ) {
+
+    console.log("LOCAL BOARD 9 is TIE");
+
+    localWinner9 = "T";
+
+  }
+
+  return localWinner9;
 
 }
 
@@ -816,11 +1085,13 @@ function getOverallWinner(){
 
   ) {
 
-    console.log("X is the ultimate winner!");
-
     overallWin = "X";
 
+    console.log(overallWin + " is the ultimate winner!");
+
     win = true;
+
+    winner = "X";
 
   } else if (
 
@@ -842,20 +1113,88 @@ function getOverallWinner(){
 
   ) {
 
-    console.log("O is the OVERALL WINNER");
-
     overallWin = "O";
+
+    console.log(overallWin + " is the OVERALL WINNER");
 
     win = true;
 
+    winner = "O";
+
   } else {
 
-    //null
+/*
+
+    ((localWin1 === "O" || localWin1 === "X") &&
+
+    (localWin2 === "O" && localWin3 === "O") ||
+
+    (localWin4 === "O" && localWin5 === "O" && localWin6 === "O") ||
+
+    (localWin7 === "O" && localWin8 === "O" && localWin9 === "O") ||
+
+    (localWin1 === "O" && localWin4 === "O" && localWin7 === "O") ||
+
+    (localWin2 === "O" && localWin5 === "O" && localWin8 === "O") ||
+
+    (localWin5 === "O" && localWin6 === "O" && localWin9 === "O") ||
+
+    (localWin1 === "O" && localWin5 === "O" && localWin9 === "O") ||
+
+    (localWin3 === "O" && localWin5 === "O" && localWin7 === "O")
+
+    overallWin = "T";
+
+  */
 
   }
 
 
 
-  //return winner ? winner : board.includes("") ? null : "T";
+  return winner;
+
+}
+
+
+
+function checkTie(){
+
+  if (
+
+    (localWin1 === "X" || localWin1 === "O" || localWin1 === "T") &&
+
+    (localWin2 === "X" || localWin2 === "O" || localWin2 === "T") &&
+
+    (localWin3 === "X" || localWin3 === "O" || localWin3 === "T") &&
+
+    (localWin4 === "X" || localWin4 === "O" || localWin4 === "T") &&
+
+    (localWin5 === "X" || localWin5 === "O" || localWin5 === "T") &&
+
+    (localWin6 === "X" || localWin6 === "O" || localWin6 === "T") &&
+
+    (localWin7 === "X" || localWin7 === "O" || localWin7 === "T") &&
+
+    (localWin8 === "X" || localWin8 === "O" || localWin8 === "T") &&
+
+    (localWin9 === "X" || localWin9 === "O" || localWin9 === "T")
+
+    && !overallWin
+
+  ) {
+
+    console.log("There is an OVERALL TIE");
+
+    win = false;
+
+    winner = "T"
+
+    draw = true;
+
+  }
+
+
+
+  return draw;
 
 }

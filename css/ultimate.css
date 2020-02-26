@@ -66,7 +66,7 @@ ul {
 }
 
 .square {
-  border: 1px solid white;
+  border: 1px solid purple;
   height: 156px;
   user-select: none;
   width: 156px;
@@ -75,7 +75,7 @@ ul {
 }
 
 .small-square {
-  border: 1px solid red;
+  border: 1px solid #b19cd9;
   height: 50px;
   user-select: none;
   width: 50px;
@@ -106,81 +106,3 @@ ul {
   color: white;
   cursor: pointer;
 }
-
-
-
-*, *:before, *:after {
-    -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-            box-sizing: border-box;
-}
-
-.game {
-    width: 450px;
-    height: 450px;
-    margin-top: 50px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-@media screen and (max-width: 500px) {
-    .game {
-        width: 315px;
-        height: 315px;
-    }
-}
-
-.game:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.area {
-    float: left;
-    width: 33.333%;
-    height: 33.333%;
-    padding: 1%;
-}
-
-.area:nth-child(3n+1),
-.area:nth-child(3n+2) {
-    border-right: 3px solid #444;
-}
-/*
-.area:nth-child(n+4) {
-    border-top: 3px solid #444;
-}
-
-.area:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-
-.tile {
-    float: left;
-    width: 33.333%;
-    height: 33.333%;
-    padding: 1%;
-}
-
-.tile-button {
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    cursor: pointer;
-    vertical-align: middle;
-
-    border: 1px solid gray;
-    border-radius: 3px;
-    background-color: #b19cd9;
-}
-
-.tile-button:hover,
-.tile-button:focus {
-    border-color: #444;
-    background-color: #b19cd9;
-}
-*/
