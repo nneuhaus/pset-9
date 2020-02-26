@@ -3,49 +3,93 @@
 const miniWinningConditions1 = [
 
   //minibox 1
+
   [1, 2, 3],
+
   [4, 5, 6],
+
   [7, 8, 9],
+
   [1, 4, 7],
+
   [2, 5, 8],
+
   [3, 6, 9],
+
   [1, 5, 9],
+
   [3, 5, 7]
+
 ]
+
+
 
 const miniWinningConditions2 = [
 
+  //minibox 2
+
   [11, 12, 13],
+
   [14, 15, 16],
+
   [17, 18, 19],
+
   [11, 14, 17],
+
   [12, 15, 18],
+
   [13, 16, 19],
+
   [11, 15, 19],
+
   [13, 15, 17]
+
 ]
+
+
 
 const miniWinningConditions3 = [
 
+  //minibox 3
+
   [21, 22, 23],
+
   [24, 25, 26],
+
   [27, 28, 29],
+
   [21, 24, 27],
+
   [22, 25, 28],
+
   [23, 26, 29],
+
   [21, 25, 29],
+
   [23, 25, 27]
+
 ]
+
+
 
 const miniWinningConditions4 = [
 
+  //minibox 4
+
   [31, 32, 33],
+
   [34, 35, 36],
+
   [37, 38, 39],
+
   [31, 34, 37],
+
   [32, 35, 38],
+
   [33, 36, 39],
+
   [31, 35, 39],
+
   [33, 35, 37]
 
 ]
@@ -180,7 +224,11 @@ let turn;
 
 let win;
 
+let draw;
+
 let overallWin = false;
+
+let tieCheck = false;
 
 let localWin1 = false;
 
@@ -199,6 +247,24 @@ let localWin7 = false;
 let localWin8 = false;
 
 let localWin9 = false;
+
+let localWinner1 = "";
+
+let localWinner2 = "";
+
+let localWinner3 = "";
+
+let localWinner4 = "";
+
+let localWinner5 = "";
+
+let localWinner6 = "";
+
+let localWinner7 = "";
+
+let localWinner8 = "";
+
+let localWinner9 = "";
 
 
 
@@ -221,6 +287,9 @@ document.getElementById("reset-button").onclick = init;
 
 
 ///////////////////// FUNCTIONS /////////////////////////////////////
+
+
+
 function init() {
 
   console.log("reset");
@@ -230,26 +299,48 @@ function init() {
     squares[x].textContent === ""
 
   }
+
+
+
   board = [
 
   ];
 
+
+
   turn = "X";
+
   render();
+
 }
+
+
 
 function render() {
+
   board.forEach(function(mark, index) {
+
     squares[index].textContent = mark;
+
   });
 
+
+
   if (draw === true) {
+
     message.textContent = "It's a tie!";
+
   } else {
+
     message.textContent = win ? `${overallWin} wins!` : `Turn: ${turn}`;
+
   }
 
+
+
 }
+
+
 
 function takeTurn(e) {
 
@@ -1096,30 +1187,6 @@ function getOverallWinner(){
     winner = "O";
 
   } else {
-
-/*
-
-    ((localWin1 === "O" || localWin1 === "X") &&
-
-    (localWin2 === "O" && localWin3 === "O") ||
-
-    (localWin4 === "O" && localWin5 === "O" && localWin6 === "O") ||
-
-    (localWin7 === "O" && localWin8 === "O" && localWin9 === "O") ||
-
-    (localWin1 === "O" && localWin4 === "O" && localWin7 === "O") ||
-
-    (localWin2 === "O" && localWin5 === "O" && localWin8 === "O") ||
-
-    (localWin5 === "O" && localWin6 === "O" && localWin9 === "O") ||
-
-    (localWin1 === "O" && localWin5 === "O" && localWin9 === "O") ||
-
-    (localWin3 === "O" && localWin5 === "O" && localWin7 === "O")
-
-    overallWin = "T";
-
-  */
 
   }
 
