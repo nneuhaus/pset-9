@@ -502,7 +502,7 @@ function getLocalWinner1(e){
 
     localWinner1 = winner;
 
-    console.log("LOCAL WINNER 1");
+    console.log("localWinner");
 
   }
 
