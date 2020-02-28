@@ -46,47 +46,19 @@ ul {
   align-items: center;
 }
 
-.small-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
 .column {
   height: 100%;
   width: 100%;
   flex-direction: column;
 }
 
+
 .wrap {
   flex-wrap: wrap;
-  height: 474px;
-  width: 474px;
+  height: 456px;
+  width: 456px;
 }
 
-.square {
-  border: 1px solid white;
-  height: 156px;
-  user-select: none;
-  width: 156px;
-  font-size: 96px;
-  line-height: 150px;
-}
-
-.small-square {
-  border: 1px solid #f25278;
-  height: 50px;
-  user-select: none;
-  width: 50px;
-  font-size: 40px;
-  line-height: 50px;
-}
-
-.square:hover {
-  background-color: #b19cd9;
-  cursor: pointer;
-}
 
 #reset-button {
   background-color: #b19cd9;
@@ -97,7 +69,6 @@ ul {
   margin: 1%;
   text-align: center;
   width: 456px;
-  margin-bottom: 0;
 }
 
 
@@ -105,4 +76,8 @@ ul {
   background-color: black;
   color: white;
   cursor: pointer;
+}
+
+canvas {
+  background:#b19cd9;
 }
