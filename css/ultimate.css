@@ -75,7 +75,7 @@ ul {
 }
 
 .small-square {
-  border: 1px solid #f25278;
+  border: 1px solid #6593f5;
   height: 50px;
   user-select: none;
   width: 50px;
@@ -105,4 +105,9 @@ ul {
   background-color: black;
   color: white;
   cursor: pointer;
+}
+
+#highlighted {
+  border-color: purple;
+  background-color: pink;
 }
